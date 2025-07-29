@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Status ITAS - Immigration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+  
+    * {
+      box-sizing: border-box;
+    }
+
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+    }
+
+    /* Header */
+    .header {
+      background-color: #0c2d55;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-area img {
+      height: 50px;
+      width: auto;
+    }
+
+    .logo-area h1 {
+      font-size: 12px;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size:10px;
+    }
+
+    .sign-in {
+      background-color: #f57c00 !important;
+      font-weight: bold;
+    }
+
+    /* Main */
+    .container {
+      text-align: left;
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;   /* 👈 same as .status-box */
+  padding-left: 20px; /* 👈 same as .status-box padding */
+ 
+    }
+.container h2{
+ text-align: left;
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+    .status-box {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 30px 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+ .visa-image {
+width: 160px;
+  height: 220px;
+  margin: 0 auto 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* .visa-image img {
+  width: 100%;
+  height: 100%;
+
+} */
+    .visa-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* show full image without cropping */
+}
+
+  
+
+
+    .valid-status {
+      background-color: #2ecc71;
+      color: white;
+      font-weight: bold;
+      padding: 10px;
+      margin-bottom: 25px;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      font-family: 'Nunito', sans-serif;
+    
+    }
+
+    .grid-item {
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px 20px;   /* Increased padding for better spacing */
+  font-size: 20px;
+  background: #fdfdfd;
+  color: #11375C;
+  font-weight: 800;  /* Regular text */
+  
+}
+
+.grid-item strong {
+  display: block;
+  color: #11375C;
+  font-size: 18px;     /* Smaller font for labels */
+  font-weight: normal;   /* Bold label */
+  margin-bottom: 5px;  /* Space between label and value */
+}
+
+.grid-item span {
+  display: block;
+  font-size: 20px;     /* Regular font size for values */
+  font-weight: bold; /* Regular weight for value text */
+  color: #11375C;
+}
+
+
+
+    /* Footer */
+    footer {
+      margin-top: 100px;
+      background-color: #0c2d55;
+      color: white;
+      padding: 20px 30px;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .socials a {
+      margin-left: 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    /* Mido Widget */
+    .mido-widget {
+      position: fixed;
+      bottom: 20px;
+      z-index: 9999;
+      right: 5px;
+    }
+
+    .mido-btn {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      color: #333;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+    }
+
+    .mido-btn img {
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo-area {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 20px;
+        padding: 5px;
+        font-size: 22px;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+        align-items: center;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 90%;
+        text-align: center;
+        margin: 6px 0;
+      }
+      .container h2{
+  text-align: left;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .socials {
+        margin-top: 10px;
+      }
+
+      .mido-btn {
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-area">
+      <img src="logo-2025.png" alt="Logo">
+      <h1>
+        MINISTRY OF IMMIGRATION AND CORRECTIONS<br>
+        DIRECTORATE GENERAL OF IMMIGRATION
+      </h1>
+    </div>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links">
+      <a href="#">HOME</a>
+      <a href="#">SERVICES</a>
+      <a href="#">INFORMATION</a>
+      <a href="#">CONTACT US</a>
+      <a href="#" class="sign-in">Sign In</a>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h2>Status ITAS</h2>
+    <div class="status-box">
+      <div class="visa-image">
+        <img src="/evisa.imigrasi.go.id-main/main.jpg" alt="User Photo">
+      </div>
+      <div class="valid-status">VALID</div>
+      <div class="grid">
+        <div class="grid-item"><strong>Permit Number</strong>  E28A2C1300JD261813725
+</div>
+        <div class="grid-item"><strong>Valid Until</strong> 18-12-2034
+</div>
+        <div class="grid-item"><strong>Name</strong> PRABHAKAR RANA
+</div>
+        <div class="grid-item"><strong>Permit Type</strong>Residence Permit</div>
+        <div class="grid-item"><strong>Visa Number</strong> 24E28A150876</div>
+        <div class="grid-item"><strong>Visa Type</strong> Type of Visa E28A</div>
+        <div class="grid-item"><strong>Main Purpose</strong> Investment, Business, or Government</div>
+        <div class="grid-item"><strong>Passport Number</strong> C6014250
+</div>
+        <div class="grid-item"><strong>Activity</strong> Investment</div>
+        <div class="grid-item"><strong>STAY PERMIT INDEX</strong> E28A2C13
+</div>
+        <div class="grid-item"><strong>PLACE OF BIRTH </strong>  MAJHRA CHHEDU SITARGANJ, UTTARAKHAND</div>
+        <div class="grid-item"><strong>NATIONALITY</strong> INDIAN</div>
+        <div class="grid-item"><strong>GENDER</strong> MALE</div>
+        <div class="grid-item"><strong>ADRESS</strong>  JL KRAMAT PULO DALAM II NO 7 KEL KRAMAT KEC SENEN
+</div>
+        <div class="grid-item"><strong>OCCUPATION </strong></div>
+        <div class="grid-item"><strong>GURANTOR</strong> TRENDING VISION EXPORTS 
+</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div>© Indonesian Immigration</div>
+    <div>HR. Rasuna Said Blok X-6, Kav 8, Kuningan, South Jakarta.</div>
+    <div class="socials">
+      Contact Us:
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <!-- Mido Button (bottom right) -->
+  <div class="mido-widget">
+    <button class="mido-btn">
+      <span>Let's Ask Mido!</span>
+      <img src="https://molina-botview.imigrasi.go.id/images/button/logo-livechat.png" alt="Mido" />
+      
+    </button>
+  </div>
+
+</body>
+</html>
